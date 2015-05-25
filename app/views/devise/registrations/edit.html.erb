@@ -1,0 +1,21 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put },html: {class: "form-signin"}) do |f| %>
+  <%= f.error_notification %>
+  <h2 class="text-center"><%= resource_name.to_s.humanize %>信息</h2>
+
+    <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email地址" %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "密码" %>
+    <%= f.input :password_confirmation, required: false, label: false, placeholder: "确认密码" %>
+    <%= f.input :current_password, required: true, label: false, placeholder: "当前密码" %>
+    <%= f.button :submit, "更新信息", class: "btn btn-primary btn-lg btn-block" %>
+
+<% end %>
+
+<h3>注销我的账户</h3>
+
+<p>不喜欢? <%= link_to "注销当前账户", registration_path(resource_name), data: { confirm: "这是真的吗？难道不再需要我了吗?" }, method: :delete %></p>
+<%= link_to "返回", :back %>

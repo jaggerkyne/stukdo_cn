@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+ # Call tasks controller, 
+ #resources is different than resource.
+ resources :tasks do
+  member do
+    put :change
+  end
+end
+resources :tasks
+devise_for :users
+
+
+
+root 'pages#home'
+
+get 'about' => "pages#about"
+
+get 'home' => "pages#home"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
