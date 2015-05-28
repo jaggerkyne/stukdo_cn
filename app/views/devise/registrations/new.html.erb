@@ -1,10 +1,10 @@
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),html: {class: "form-signin"}) do |f|%>
-<h2 class="text-center">登记</h2>
-<%= f.error_notification%>
-<%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email地址", input_html: {class: "form-control"}%>
-<%= f.input :password, required: true, label: false, placeholder: "请输入密码", input_html: {class: "form-control"} %>
-<%= f.input :password_confirmation, required: true, label: false, placeholder: "请确认密码", input_html: {class: "form-control"}%>
-<%= f.button :submit, "完成注册", class: "btn btn-primary btn-lg btn-block"%>
-<% end%>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),html: {class: "form-signin"}) do |f| %>
+<h2 class="text-center">会员登记</h2>
+<%= f.error_notification %>
+<%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email", input_html: {class: "form-control"} %>
+<%= f.input :password, required: true, label: false, placeholder: "请输入密码", input_html: {class: "form-control"}%>
+<%= f.input :password_confirmation, required: true, label: false, placeholder: "请确认密码", input_html: {class: "form-control"} %>
+<%= f.button :submit, "完成注册", class: "btn btn-primary btn-lg btn-block" %>
+<% end %>
 
 <%= render "devise/shared/links" %>
